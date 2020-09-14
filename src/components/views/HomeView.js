@@ -20,7 +20,12 @@ class HomeView extends Component {
         <ul>
           {this.state.movies.map(movie => (
             <li key={movie.id}>
-              <Link to={`/movies/${movie.id}`}>
+              <Link
+                to={{
+                  pathname: `/movies/${movie.id}`,
+                  state: { from: this.props.location.pathname },
+                }}
+              >
                 {movie.title || movie.original_name}
               </Link>
             </li>

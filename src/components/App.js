@@ -5,21 +5,24 @@ import MoviesPage from './views/MoviesPage';
 import NotFoundPage from './views/NotFoundPage';
 import MovieDetailView from './views/MovieDetailView';
 import styles from './search/search.module.css';
+import routes from '../routes';
 
 const App = () => (
   <>
     <ul className={styles.menu}>
       <li className={styles.menuItem}>
-        <NavLink to="/">Home</NavLink>
+        <NavLink exact to={routes.home}>
+          Home
+        </NavLink>
       </li>
       <li className={styles.menuItem}>
-        <NavLink to="/movies">Movies</NavLink>
+        <NavLink to={routes.movies}>Movies</NavLink>
       </li>
     </ul>
     <Switch>
-      <Route exact path="/" component={HomeView} />
-      <Route path="/movies/:movieId" component={MovieDetailView} />
-      <Route exact path="/movies" component={MoviesPage} />
+      <Route exact path={routes.home} component={HomeView} />
+      <Route path={routes.movieDetails} component={MovieDetailView} />
+      <Route exact path={routes.movies} component={MoviesPage} />
       <Route component={NotFoundPage} />
     </Switch>
   </>
