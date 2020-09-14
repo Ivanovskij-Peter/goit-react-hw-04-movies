@@ -4,14 +4,15 @@ import HomeView from './views/HomeView';
 import MoviesPage from './views/MoviesPage';
 import NotFoundPage from './views/NotFoundPage';
 import MovieDetailView from './views/MovieDetailView';
+import styles from './search/search.module.css';
 
 const App = () => (
   <>
-    <ul>
-      <li>
+    <ul className={styles.menu}>
+      <li className={styles.menuItem}>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
+      <li className={styles.menuItem}>
         <NavLink to="/movies">Movies</NavLink>
       </li>
     </ul>

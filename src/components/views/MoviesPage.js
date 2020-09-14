@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
-import SearchForm from '../SearchForm';
+import SearchForm from '../search/SearchForm';
 
 class MoviesPage extends Component {
   state = {

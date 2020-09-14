@@ -16,7 +16,15 @@ class Cast extends Component {
     this.setState({ ...response.data });
   }
   render() {
-    return <h1> это список актеров</h1>;
+    return (
+      <div>
+        {/* <h1>this is photo</h1> */}
+        <img
+          src={`https://image.tmdb.org/t/p/w300${this.state.profile_path}`}
+          alt=""
+        />
+      </div>
+    );
   }
 }
 export default Cast;
